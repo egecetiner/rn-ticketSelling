@@ -2,29 +2,33 @@ It is WIP:Work In Progress React Native ticket-selling app.
 
 To run: You need to create your own firebase project and you need to add backend to your .env as API_BASE_URL= 
 
+## Stack
+
 Db: FireStore
 
 Backend: Express typescript with Firebase functions
 
 Frontend: React native
 
-[✔] Firebase Phone authentication is integrated.
+## Task List
 
-[✔] Profile and settings screen.
+[x] Firebase Phone authentication is integrated.
 
-[✔] Admin and personal panel.
+[x] Profile and settings screen.
 
-[✔] Admin can create events such as concerts.
+[x] Admin and personal panel.
 
-[✔] Clients can see events.
+[x] Admin can create events such as concerts.
 
-[✔] Iyzico Payment system is integrated.
+[x] Clients can see events.
 
-[✔] Clients can buy events.
+[x] Iyzico Payment system is integrated.
 
-[✔] When client bougth an item, QR code is generated.
+[x] Clients can buy events.
 
-[✔] Personal can (only) see his/her assigned events and its participants.
+[x] When client bougth an item, QR code is generated.
+
+[x] Personal can (only) see his/her assigned events and its participants.
 
 [ ] Personal can scan QR code.
 
