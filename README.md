@@ -1,3 +1,5 @@
+# React Native ticketSelling 
+
 It is WIP:Work In Progress React Native ticket-selling app.
 
 To run: You need to create your own firebase project and you need to add backend to your .env as API_BASE_URL= 
