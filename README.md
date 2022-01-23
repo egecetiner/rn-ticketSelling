@@ -33,3 +33,7 @@ Frontend: React native
 [ ] Personal can scan QR code.
 
 
+
+https://user-images.githubusercontent.com/67219175/150677713-fa083c9e-5cff-4def-85d6-b087b5fa5122.mp4
+
+
