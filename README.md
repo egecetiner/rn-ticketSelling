@@ -14,11 +14,11 @@ Frontend: React native
 
 [x] Firebase Phone authentication is integrated.
 
-[x] Profile and settings screen.
+[x] Profile and settings screen. Profile can be updated.
 
 [x] Admin and personal panel.
 
-[x] Admin can create events such as concerts.
+[x] Admin can create, delete, update events such as concerts.
 
 [x] Clients can see events.
 
