@@ -65,13 +65,24 @@ const participantScreen = ({
                 !tmp.some((elem) => data2.value.name === elem.name)
               ) {
                 tmp.push({name: data2.value.name, read: ticket.read});
+                setData(tmp);
+              } else if (
+                tmp.some(
+                  (elem) =>
+                    data2.value.name === elem.name &&
+                    ticket.read !== elem.read,
+                )
+              ) {
+                const result = tmp.filter(
+                  (user) => user.name !== data2.value.name,
+                );
+                result.push({name: data2.value.name, read: ticket.read});
+                setData(result);
               }
             });
           }),
         );
       });
-
-    setData(tmp);
   };
 
   return (
