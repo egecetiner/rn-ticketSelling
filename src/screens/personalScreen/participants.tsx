@@ -20,7 +20,7 @@ const wait = (timeout: number) => {
 
 const participantScreen = ({
   route: {
-    params: {id, code},
+    params: {id},
   },
 }) => {
   const navigation = useNavigation();
@@ -37,9 +37,6 @@ const participantScreen = ({
   }, []);
 
   useEffect(() => {
-    if (code !== undefined) {
-      updateTicket(code);
-    }
     fetchdata();
   }, [refreshing]);
   useEffect(() => {
@@ -51,10 +48,6 @@ const participantScreen = ({
       return data.name.toLowerCase().includes(searchValue.toLowerCase());
     });
     setFilteredData(filtered);
-  };
-
-  const updateTicket = async (code: any) => {
-    await api.tickets.updateTicket(code, true);
   };
 
   const fetchdata = async () => {
@@ -112,7 +105,9 @@ const participantScreen = ({
           textStyles={styles.butontext}
           text={'Bilet Oku'}
           onPress={() => {
-            navigation.navigate('Camera');
+            navigation.navigate('Camera', {
+              id: id,
+            });
           }}></Button>
       </View>
 
