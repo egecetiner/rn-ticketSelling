@@ -23,10 +23,14 @@ const Camera = ({
           });
         } else if (!data.value.read) {
           await api.tickets.updateTicket(code, true);
-
-          Alert.alert('Başarılı', 'Bilet başarıyla okundu.');
-          navigation.navigate('Participant', {
-            id: id,
+          await api.users.getUser(data.value.userId).then((data1) => {
+            Alert.alert(
+              'Başarılı',
+              `İsim: ${data1.value.name} Bilet: ${data.value.ticketName}`,
+            );
+            navigation.navigate('Participant', {
+              id: id,
+            });
           });
         }
       });
