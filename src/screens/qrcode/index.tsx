@@ -11,7 +11,6 @@ const codeScreen = ({
     params: {city, date, mekan, codeValue, title, name, read},
   },
 }) => {
-  console.log('muhit2', read);
   return (
     <View style={styles.page}>
       <Text style={styles.title}>{`${title} - ${city}`}</Text>

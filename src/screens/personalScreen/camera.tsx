@@ -14,11 +14,21 @@ const Camera = ({
 
   const onRead = async (code: any) => {
     if (!executed) {
-      await api.tickets.updateTicket(code, true);
       setExecuted(true);
-      Alert.alert('Başarılı', 'Bilet başarıyla okundu.');
-      navigation.navigate('Participant', {
-        id: id,
+      await api.tickets.getTicket(code).then(async (data) => {
+        if (data.value.read) {
+          Alert.alert('Başarısız', 'Bilet geçersiz!');
+          navigation.navigate('Participant', {
+            id: id,
+          });
+        } else if (!data.value.read) {
+          await api.tickets.updateTicket(code, true);
+
+          Alert.alert('Başarılı', 'Bilet başarıyla okundu.');
+          navigation.navigate('Participant', {
+            id: id,
+          });
+        }
       });
     }
   };
