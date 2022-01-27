@@ -66,7 +66,7 @@ const ProductItem = ({item}: ProductItemProps) => {
       });
     }
   };
-
+  console.log('item1', item);
   const onPressDelete = () => {
     Alert.alert('Etkinliği silmek istediğinize emin misiniz?', '', [
       {

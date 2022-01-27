@@ -107,6 +107,13 @@ class ticketsApi {
     id: string,
     read: boolean,
   ): Promise<SuccessResult<any> | ErrorResult<AppError>> {
+    if (id.trim() === '' || id.trim().length < 2) {
+      return Result.fail({
+        errorMsg: 'User ID is empty',
+        code: 'bad-format',
+      });
+    }
+
     const reqResult = await this.api.makeRequest<any>(
       this.api.client.put(this.endpoint + `/${id}`, {
         read: read,

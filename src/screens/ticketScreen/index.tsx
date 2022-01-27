@@ -52,6 +52,18 @@ const ticketScreen = observer(() => {
             ) {
               tmp.push(response.value[0]);
               setData(tmp);
+            } else if (
+              tmp.some(
+                (elem) =>
+                  response.value[0].id === elem.id &&
+                  response.value[0].read !== elem.read,
+              )
+            ) {
+              const result = tmp.filter(
+                (ticket) => ticket.id !== response.value[0].id,
+              );
+              result.push(response.value[0]);
+              setData(result);
             }
           }),
         );
