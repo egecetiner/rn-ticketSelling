@@ -22,16 +22,24 @@ const Camera = ({
             id: id,
           });
         } else if (!data.value.read) {
-          await api.tickets.updateTicket(code, true);
-          await api.users.getUser(data.value.userId).then((data1) => {
-            Alert.alert(
-              'Başarılı',
-              `İsim: ${data1.value.name} Bilet: ${data.value.ticketName}`,
-            );
+          if (data.value.eventId === id) {
+            await api.tickets.updateTicket(code, true);
+
+            await api.users.getUser(data.value.userId).then((data1) => {
+              Alert.alert(
+                'Başarılı',
+                `İsim: ${data1.value.name} Bilet: ${data.value.ticketName}`,
+              );
+              navigation.navigate('Participant', {
+                id: id,
+              });
+            });
+          } else {
+            Alert.alert('Başarısız', `Yetkiniz yok`);
             navigation.navigate('Participant', {
               id: id,
             });
-          });
+          }
         }
       });
     }
