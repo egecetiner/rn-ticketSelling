@@ -32,7 +32,7 @@ Frontend: React native
 
 [x] Personal can (only) see his/her assigned events and its participants.
 
-[ ] Personal can scan QR code.
+[x] Personal can scan QR code.
 
 
 
